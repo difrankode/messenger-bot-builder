@@ -1,0 +1,38 @@
+{
+  "name": "messenger-bot-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "babel-node": "babel-node --presets=latest",
+    "start": "nodemon --exec npm run babel-node -- ./app.js",
+    "build": "babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImFranQ/digital-game-bot.git"
+  },
+  "author": "Codeartes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ImFranQ/digital-game-bot/issues"
+  },
+  "homepage": "https://github.com/ImFranQ/digital-game-bot#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "botator": "^0.1.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.17",
+    "request": "^2.88.0"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  }
+}
