@@ -3,6 +3,7 @@ services:
   node:
     container_name: bot-builder-node
     image: node:10.15.1
+    working_dir: /app
     volumes: 
       - ./:/app
     ports:
