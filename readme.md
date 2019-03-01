@@ -69,6 +69,74 @@ template.buttons('Welcome my friend.', [
 ])
 ```
 
+### Predefined templates
+
+#### Phone Number
+
+Template for users to contact you.
+
+Syntax: `template.phoneNumberButton(<number>, <title>)`
+
+Example:
+```
+template.buttons('Need you assintance', [
+  ...,
+  template.phoneNumberButton('+584241707647', 'You can call me'),
+  ...
+])
+```
+
+#### User's phone number
+
+Request the user's phone number
+
+Syntax: `template.userPhoneNumber`
+
+> This only can be used on quick replies template
+
+Example:
+```
+template.quickReplies('Share your location', [
+  ...,
+  template.userPhoneNumber,
+  ...
+])
+```
+
+#### User's email
+
+Request the user's email
+
+Syntax: `template.userEmail`
+
+> This only can be used on quick replies template
+
+Example:
+```
+template.quickReplies('Share your email', [
+  ...,
+  template.userEmail,
+  ...
+])
+```
+
+#### User's Location
+
+Request the user's location
+
+Syntax: `template.location`
+
+> This only can be used on quick replies template
+
+Example:
+```
+template.quickReplies('Share your location', [
+  ...,
+  template.location,
+  ...
+])
+```
+
 ## "Get started" button
 
 To enable the "get started" button, go to `app.js` file and uncomment the next line:

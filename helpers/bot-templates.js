@@ -71,9 +71,26 @@ module.exports = {
       message: messagePayload,
     }
   },
+  phoneNumberButton: (phone, title) =>{
+    return {
+      type: 'phone_number',
+      title: title? title : 'Call',
+      payload: phone
+    }
+  },
+  location: {
+    content_type: 'location'
+  },
+  userPhoneNumber: {
+    content_type: 'user_phone_number'
+  },
+  userEmail:{
+    content_type: 'user_email',
+    payload: 'PAYLOAD'
+  },
   getStarted: {
     get_started: {
-      payload: "GET_STARTED_PAYLOAD"
+      payload: 'GET_STARTED_PAYLOAD'
     }
   }
 }
