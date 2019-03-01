@@ -150,6 +150,9 @@ class Bot{
     api.callMessagesAPI( botTemplates.markSeen( recipientId ) );
   };
   
+  enableGetStartedButton () {
+    api.callMessengerProfileAPI( botTemplates.getStarted );
+  }
 }
 
 export default new Bot()

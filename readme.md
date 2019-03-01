@@ -68,3 +68,18 @@ template.buttons('Welcome my friend.', [
   }
 ])
 ```
+
+## "Get started" button
+
+To enable the "get started" button, go to `app.js` file and uncomment the next line:
+
+```
+bot.enableGetStartedButton();
+```
+also in the `helpers/bot-manage.js` file
+
+```
+bot.receive('payload', 'GET_STARTED_PAYLOAD', grettingsCallback)
+```
+
+To delete this option, see the [documentation](https://developers.facebook.com/docs/messenger-platform/reference/messenger-profile-api/#delete)

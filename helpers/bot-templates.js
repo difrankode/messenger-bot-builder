@@ -70,5 +70,10 @@ module.exports = {
       },
       message: messagePayload,
     }
+  },
+  getStarted: {
+    get_started: {
+      payload: "GET_STARTED_PAYLOAD"
+    }
   }
 }

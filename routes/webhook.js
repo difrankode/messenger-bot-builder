@@ -1,6 +1,6 @@
 import express from 'express'
 import config from '../config'
-import botManager from '../messenger-api-helpers/bot-manager'
+import botManager from '../helpers/bot-manager'
 
 const router = express.Router();
 

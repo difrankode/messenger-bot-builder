@@ -4,3 +4,4 @@ test/*
 *.lock
 *-lock.*
 config.js
+assets/

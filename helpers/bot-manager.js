@@ -11,6 +11,8 @@ const grettingsCallback = (id, timestamp)=>{
   ])
 }
 
+// bot.receive('payload', 'GET_STARTED_PAYLOAD', grettingsCallback)
+
 bot.receive('text', /^hi/, grettingsCallback)
 
 bot.receive('payload', 'CLICK_PAYLOAD', (id, timestamp) => {
