@@ -10,6 +10,7 @@ class Bot{
     this.handleReceiveImage;
     this.handleReceiveAudio;
     this.handleReceiveLocation;
+    this.quickReplyHandler;
   }
 
   addHandlerMessage(textMessage, callback){
@@ -52,6 +53,10 @@ class Bot{
     }else if( arguments[0] == 'location' &&
       typeof arguments[1] == 'function' ){
         this.handleReceiveLocation = arguments[1]
+
+    }else if( arguments[0] == 'quick_reply' &&
+      typeof arguments[1] == 'function' ){
+        this.quickReplyHandler = arguments[1]
     }else{
       // 
     }
@@ -67,17 +72,24 @@ class Bot{
     
     if( clientMessage.text ){
       /*
-       * handle text messages
+       * handle quick replies
        */
-      this.textMessages.forEach( message => {
-        let textMessage = clientMessage.text.toLowerCase()
-        let matchText = message.textMessage == textMessage
-        let matchRegExp = message.textMessage instanceof RegExp && message.textMessage.test( textMessage )
-        
-        if( matchText || matchRegExp ){
-          template = message.response( senderId, timestamp )
-        }
-      })
+      if( clientMessage.quick_reply && this.quickReplyHandler ){
+        template = this.quickReplyHandler(senderId, clientMessage.quick_reply.payload, timestamp)
+      }else{
+        /*
+         * handle text messages
+         */
+        this.textMessages.forEach( message => {
+          let textMessage = clientMessage.text.toLowerCase()
+          let matchText = message.textMessage == textMessage
+          let matchRegExp = message.textMessage instanceof RegExp && message.textMessage.test( textMessage )
+          
+          if( matchText || matchRegExp ){
+            template = message.response( senderId, timestamp )
+          }
+        })
+      }
 
     }else{
       /*

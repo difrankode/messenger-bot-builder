@@ -44,6 +44,11 @@ To manage a image, audio or location, use next syntax:
 
 The callback receive three params: user id, message sent by user and timestamp
 
+To manage a quick_reply relative payload use: 
+`bot.receive('quick_reply', <callback>)`
+
+You can use it to manage the relative payloads. As for example when you ask for the email or the user's phone number.
+
 > The callback always respond one template
 
 ## Templates
